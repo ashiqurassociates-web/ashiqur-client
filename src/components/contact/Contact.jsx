@@ -1,0 +1,103 @@
+import './Contact.scss';
+import { useForm } from '@formspree/react';
+import { IoLocationSharp } from 'react-icons/io5';
+import { BsFillTelephoneFill, BsFillBuildingFill } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
+
+const Contact = () => {
+  const [state, handleSubmit] = useForm("xqazvldd");
+
+  if (state.succeeded) {
+    return <h2 style={{ color: 'green', padding: '5rem' }}>Thanks for making an appointment! We will contact you soon.</h2>;
+  }
+
+  return (
+    <div className="contact-main">
+      <div className="wrapper">
+        <div className="left">
+          <h1>Need Advice From a Professional Lawyer?</h1>
+          <p>Our dedicated legal team is here to provide expert guidance and support for all your legal matters.</p>
+
+          <div className="contact">
+            {/* High Court Chamber */}
+            <div className="contact-sec">
+              <div className="icon"><IoLocationSharp /></div>
+              <div className="address">
+                <h3>High Court Chamber</h3>
+                <p>Room No. 409 (3rd Floor), Sher-E-Bangla A.K. Fazlul Haque Bhaban, Supreme Court Bar Association Building, Dhaka-1000</p>
+              </div>
+            </div>
+
+            {/* Dhaka District Court Chamber */}
+            <div className="contact-sec">
+              <div className="icon"><BsFillBuildingFill /></div>
+              <div className="address">
+                <h3>Dhaka District Court Chamber</h3>
+                <p>Room No. C-1 (3rd Floor), Nahar Complex, Holding No. 25/1, Court House Street, Police Station: Kotwali, Dhaka</p>
+              </div>
+            </div>
+
+            {/* Corporate Chamber */}
+            <div className="contact-sec">
+              <div className="icon"><BsFillBuildingFill /></div>
+              <div className="address">
+                <h3>Corporate Chamber</h3>
+                <p>Suite No. 15, Level-7, Kabbokash Super Market, Plot No. 3/D, Kawran Bazar, Tejgaon, Dhaka-1215</p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="contact-sec">
+              <div className="icon"><BsFillTelephoneFill size={24} /></div>
+              <div className="address">
+                <h3>Phone</h3>
+                <p>+880 2550 14178</p>
+                <p>+880 1794 876432</p>
+                <p>+880 1811 903223</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="contact-sec">
+              <div className="icon"><MdEmail size={29} /></div>
+              <div className="address">
+                <h3>Email</h3>
+                <p>arandassociates81@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="right">
+          <form onSubmit={handleSubmit}>
+            <input name='name' type="text" className="name" placeholder='Name' required />
+            <div className="phn-email">
+              <input name='phone' type="text" className="phone" placeholder='Phone' required />
+              <input name='email' type="email" className="email" placeholder='Email' required />
+            </div>
+            <select name="case" required>
+              <option value="" disabled selected>Select Case</option>
+              <option value="criminal-law">Criminal Law</option>
+              <option value="business-law">Business Law</option>
+              <option value="family-law">Family Law</option>
+              <option value="real-estate-law">Real Estate Law</option>
+              <option value="others">Others</option>
+            </select>
+            <textarea name="message" cols="30" rows="10" required placeholder='Case Description'></textarea>
+            <button type="submit">Make Appointment</button>
+          </form>
+        </div>
+      </div>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8792786908216!2d90.39186301074342!3d23.751683978580505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8981ad5a153%3A0x80e209745fc90229!2sKabbokash%20Super%20Market!5e0!3m2!1sen!2sbd!4v1695144137178!5m2!1sen!2sbd"
+        width="100%"
+        height="450"
+        style={{ border: 0, marginBottom: '5rem' }}
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  );
+};
+
+export default Contact;

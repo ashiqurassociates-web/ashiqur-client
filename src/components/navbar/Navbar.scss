@@ -1,0 +1,143 @@
+@import '../../global.scss';
+
+.nav-main {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: $color-primary;
+  user-select: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  .nav {
+    @include container;
+    color: $color-dark;
+    z-index: 999;
+    // padding: 10px 1rem;
+    
+    @include tablet {
+      position: fixed;
+      padding: 0 1rem;
+      top: 0;
+      right: 0;
+      left: 0;
+      box-shadow: 0px 1px 5px #00000021;
+      background-color: #192414;
+
+    }
+
+    &-up {
+      @include flex(center, flex-end);
+      gap: 40px;
+      margin-bottom: 20px;
+
+      @include tablet {
+        display: none;
+      }
+
+      .nav-call {
+        @include flex();
+        gap: 8px;
+        font-size: 15px;
+      }
+
+      .nav-mail {
+        @include flex();
+        gap: 8px;
+      }
+    }
+
+    &-down {
+      @include flex(center, space-between);
+
+      .nav-logo {
+        img {
+          width: 400px;
+        }
+
+        @include tablet {
+          img {
+            width: 300px;
+          }
+        }
+      }
+
+      ul {
+        @include flex();
+        gap: 30px;
+        color: #fff;
+        font-size: 1rem;
+        transition: 0.5s ease;
+        z-index: 99;
+        text-transform: uppercase;
+
+        @include tablet {
+          flex-direction: column;
+          position: fixed;
+          padding: 2rem;
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 100%;
+          transform: translateX(600px);
+          background-color: #fff;
+          box-shadow: 0px 1px 5px #00000021;
+        }
+
+        .link {
+          color: #fff;
+          @include tablet {
+            width: 100%;
+            color: #192414;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.219);
+          }
+
+          &.active {
+            border-bottom: 2px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-btn {
+  display: none;
+  z-index: 9999;
+  cursor: pointer;
+
+  &-line {
+    width: 32px;
+    height: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      transform-origin: left;
+      transition: 0.5s ease;
+    }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    display: block;
+  }
+}

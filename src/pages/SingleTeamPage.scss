@@ -1,0 +1,18 @@
+@import '../global.scss';
+
+.team-single-page {
+  margin: 5rem 0;
+  .wrapper {
+    // background-color: $color-light;
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+      padding: 2rem;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../global.scss';
+
+.team {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  // background-color: #f5f3f3;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  overflow: hidden;
+  padding: 10px;
+  @include mobile {
+    width: 170px;
+    height: 270px;
+  }
+  .up {
+    img {
+      transition: 0.5s;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      @include mobile {
+        height: 120px;
+        width: 100%;
+      }
+    }
+  }
+  .down {
+    position: absolute;
+    color: gray;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    // height: 142px;
+    text-align: center;
+    // background-color: $color-light;
+    transition: 0.3s ease-in-out;
+    @include mobile {
+      position: static;
+      
+      color: gray
+    }
+    .name {
+      @include font-play-fair;
+      font-size: 1.4rem;
+      margin-top: 15px;
+      @include mobile {
+        margin-top: 5px;
+        font-size: 1.1rem;
+      }
+    }
+    .title {
+      font-size: 13px;
+      margin-top: 5px;
+      @include mobile {
+        font-size: 10px;
+        color: gray;
+      }
+    }
+    .details-btn {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      // border: 1px solid rgb(192, 192, 192);
+      width: 100%;
+      justify-content: center;
+      transition: .5s;
+    }
+  }
+}

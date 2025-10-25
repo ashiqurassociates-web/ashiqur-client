@@ -1,0 +1,37 @@
+@import '../../global.scss';
+
+.jobs{
+  width: 800px;
+  padding: 30px 80px;
+  @include flex(center, space-between);
+  border: .5px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  gap: 10px;
+  background-color: $color-light;
+  text-decoration: none;
+  transition: .3s;
+  &:hover{
+    transform: scale(1.03);
+  }
+  @include mobile {
+    padding: 10px 20px;
+    flex-direction: column;
+  }
+  h2 {
+    text-align: center;
+    color: $color-dark-blue;
+    @include font-play-fair();
+    font-size: 1.8rem;
+    @include flex();
+    flex-direction: column;
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+  span{
+    color: gray;
+    b{
+      margin-right: 10px;
+    }
+  }
+}
