@@ -10,6 +10,7 @@ const BlogPage = () => {
     queryFn: () => axiosReq.get('/blog').then(res => res.data)
   });
 
+
   return (
     <div className='blog-page'>
       <div className="intro">

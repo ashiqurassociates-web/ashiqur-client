@@ -24,7 +24,10 @@ const practiceAreasPage = () => {
                     maxWidth: '300px',
                     mb: 4
                   }}>
-                    <Avatar sx={{ alignSelf: 'center', mb: 2, width: '80px', height: '80px', opacity: '.7' }} variant="square" src={data.img} />
+                    {
+                      data.img &&
+                      <Avatar sx={{ alignSelf: 'center', mb: 2, width: '80px', height: '80px', opacity: '.7' }} variant="square" src={data.img} />
+                    }
                     <Typography variant='h5' sx={{ fontSize: '30px', textAlign: 'center', mb: 2 }}>{data.title}</Typography>
                     <Typography sx={{ color: 'gray' }}>{parser(data.body)}</Typography>
                   </Stack>

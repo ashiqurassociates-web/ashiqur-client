@@ -23,6 +23,8 @@ const HomePage = () => {
       <Achieve />
       <Reviews />
 
+      {
+        blogData.length > 0 &&
         <div className="blog-sec">
           <motion.h1
             transition={{ duration: 1 }}
@@ -45,7 +47,7 @@ const HomePage = () => {
           </div>
           <Link to='/blog' className="more-blog-btn link">Our Blog<BsArrowRight /> </Link>
         </div>
-      
+      }
     </div>
   )
 }
