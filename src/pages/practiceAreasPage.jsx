@@ -18,7 +18,7 @@ const practiceAreasPage = () => {
         {
           isLoading ? 'Loading..' : error ? 'Something went wrong!' :
             <Stack direction={'row'} gap={6} flexWrap={'wrap'} justifyContent={'center'} mt={5}>
-              {data.length === 0 ? <Typography>No data</Typography> :
+              {data?.length === 0 ? <Typography>No data</Typography> :
                 data.map((data, i) => (
                   <Stack sx={{
                     maxWidth: '300px',

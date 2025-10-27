@@ -24,7 +24,7 @@ const HomePage = () => {
       <Reviews />
 
       {
-        blogData.length > 0 &&
+        blogData?.length > 0 &&
         <div className="blog-sec">
           <motion.h1
             transition={{ duration: 1 }}

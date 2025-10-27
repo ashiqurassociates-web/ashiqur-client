@@ -22,7 +22,7 @@ const BlogPage = () => {
       <div className="container">
         {
           isLoading ? 'Loading..' : error ? 'Something went wrong!' :
-            blogData.length === 0 ? <h2 style={{ padding: '5rem', color: 'gray' }}>Blog Empty.</h2> :
+            blogData?.length === 0 ? <h2 style={{ padding: '5rem', color: 'gray' }}>Blog Empty.</h2> :
               blogData.map((blog, index) => (
                 <motion.div
                   key={index}
